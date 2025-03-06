@@ -1,0 +1,61 @@
+.tasks {
+    width: 100%;
+    min-height: 100vh;
+    max-height: auto;
+    position: relative;
+}
+
+.tasks-input-div {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.tasks-input {
+    border: none;
+    outline: none;
+}
+
+.tasks-card {
+    border: 1px solid red;
+    margin-left: 10px;
+    max-height: 200px;
+    
+    /* min-height: 170px; */
+}
+
+.tasks-card-p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+.tasks-card-p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+.card-icon-head {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.card-icon-head:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.del {
+    color: red;
+
+}
+.task-update{
+    position: absolute;
+    position: fixed;
+    top:75px;
+    left:0px;
+    width: 100%;
+    min-height: 80vh;
+    max-height: auto;
+    display: none;
+}
+
+.btn{
+    width:min-content
+}

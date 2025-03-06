@@ -1,0 +1,64 @@
+.user-png{
+    height:28px;
+    width:30px;
+}
+
+.vite-icon {
+    width: 30px;  
+    height: auto;
+    margin-right: 10px; 
+  }
+
+.navbar-brand{
+    background-color:#Ec583a;
+    color: white;
+    border-radius: 5px;
+    padding:5px 5px 5px 5px;
+}
+
+.btn-nav {
+    background-color: #Ec583a;
+    border-radius: 5px;
+    color: white !important;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    transform: translateZ(0);
+}
+
+.btn-nav:hover {
+    background-color: #0DA7C5;
+    transform: translate(0, -3px);
+}
+
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.navbar-dark {
+  background-color: #333 !important;
+}
+
+.navbar-light {
+  background-color: white !important;
+}
+
+.dark-mode-toggle {
+  background-color: #Ec583a;
+    border-radius: 5px;
+    color: white !important;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    transform: translateZ(0);
+}
+
+.dark-mode-toggle:hover {
+  text-decoration: underline;
+}
+

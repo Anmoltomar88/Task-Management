@@ -121,6 +121,28 @@ const Tasks = () => {
       toast.success("Task Updated Locally");
     }
   };
+
+  //mark done yaha per
+  // const HandleMarkAsDone = async (taskId) => {
+  //   try {
+  //     const response = await axios.put(
+  //       `${process.env.REACT_APP_BACKEND_URL}/mark-done/${taskId}`
+  //     );
+  
+  //     if (response.status === 200) {
+  //       toast.success(response.data.message);
+  //       setTaskArray((prevTasks) =>
+  //         prevTasks.map((task) =>
+  //           task._id === taskId ? { ...task, status: !task.status } : task
+  //         )
+  //       );
+  //     }
+  //   } catch (error) {
+  //     console.error("Error marking task as done:", error);
+  //     toast.error("Failed to mark task as done.");
+  //   }
+  // };
+  
   
 
   return (

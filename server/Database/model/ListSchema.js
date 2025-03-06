@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-// import UserInfo from "./userSchema.js";
 
 const listSchema = mongoose.Schema({
     title: {
@@ -10,14 +9,18 @@ const listSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    user:[{
-        type:mongoose.Types.ObjectId,
-        ref:"UserInfo"
+    status: {
+        type: Boolean,
+        default: false
+    },
+    user: [{
+        type: mongoose.Types.ObjectId,
+        ref: "UserInfo"
     }]
 }, {
     timestamps: true
 });
 
-const List =mongoose.model("List",listSchema);
+const List = mongoose.model("List", listSchema);
 
 export default List;

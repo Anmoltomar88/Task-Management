@@ -21,7 +21,7 @@ const Read = async (req, res) => {
     try {
         const {id}= req.params;
         const list = await List.find({ user : id }).sort({createdAt :-1});
-        if(list.lenght!=0){
+        if(list.length!=0){
             res.status(200).json({list})
         }else{
             res.status(200).json({message : "no Task"})
@@ -70,4 +70,42 @@ const Delete = async (req, res) => {
     }
   };
 
-export {Create,Read,Update,Delete};
+  //mark as done yaha pe
+  const mark_done = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const task = await List.findByIdAndUpdate(id, { status: true },{ new: true });
+        if (!task) return res.status(404).json({ message: "Task not found" });
+        res.status(200).json({ message: "Task marked as done", task });
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
+};
+
+const ReadSingleTask = async (req, res) => {
+  try {
+      const { id } = req.params;
+      const task = await List.findById(id);
+      
+      if (!task) {
+          return res.status(404).json({ message: "Task not found" });
+      }
+
+      res.status(200).json(task);
+  } catch (error) {
+      res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+const mark_undone = async (req, res) => {
+  try {
+      const task = await List.findByIdAndUpdate(req.params.id, { status: false });
+      if (!task) return res.status(404).json({ message: "Task not found" });
+      res.status(200).json({ message: "Task unmarked as done", task });
+  } catch (error) {
+      res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+
+export {Create,Read,Update,Delete,mark_done,ReadSingleTask,mark_undone};

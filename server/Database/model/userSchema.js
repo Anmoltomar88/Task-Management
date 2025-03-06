@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-// import List from "./ListSchema.js";
+
 const userSchema = mongoose.Schema({
     email: {
         type: String,

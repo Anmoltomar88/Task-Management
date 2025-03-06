@@ -112,7 +112,7 @@ const Tasks = () => {
         }
       } catch (error) {
         console.error(error);
-        toast.error("Problem Updating The Task");
+        toast.error(" Please refresh,Problem Updating The Task");
       }
     } else {
       setTaskArray(prevTasks =>

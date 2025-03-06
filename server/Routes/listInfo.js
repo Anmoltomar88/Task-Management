@@ -31,21 +31,7 @@ const Read = async (req, res) => {
     }
 };
 
-// const Update = async (req, res) => {
-//     try {
-//         const { title , body } = req.body;
-//         const existingUser = await UserInfo.findById(id_User);
-//         if (existingUser) {
-//             const { id }=req.params;
-//             const list = await List.findByIdAndUpdate(id,{ title,body});
-//             await list.save().then(() => res.status(200).json({ list  }));
-//         }else{
-//           res.status(400).json({message:"no user"});
-//         }
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
+
 const Update =async(req,res)=>{
   try {
     const {title,body,id_User} =req.body;

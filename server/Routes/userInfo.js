@@ -1,10 +1,10 @@
 import UserInfo from "../Database/model/userSchema.js";
-import bcrypt from "bcrypt";
+import CryptoJS from "crypto-js";
 
 const SignUp = async (req, res) => {
     try {
         const { email, username, password } = req.body;
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = CryptoJS.SHA256(password).toString();
         const newUser = new UserInfo({
             email: email,
             username: username, 
@@ -21,10 +21,10 @@ const SignIn = async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await UserInfo.findOne({ email: email });
-        const isCorrectPassword = await bcrypt.compare(password, user.password);
+        const hashedPassword = CryptoJS.SHA256(req.body.password).toString();
         
         if (!user){ return res.status(404).json({ message: "User not found. Please sign up first." });}
-        if (!isCorrectPassword){ return res.status(400).json({ message: "Password is not correct" });}
+        if (hashedPassword !== user.password){ return res.status(400).json({ message: "Password is not correct" });}
         
         const {  password: userPassword, ...otherInfo } = user._doc;
         res.status(200).json(otherInfo);

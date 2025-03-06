@@ -31,7 +31,7 @@ const SignIn = () => {
     };
     const handleSubmit = async (e) => {
         try {
-            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}login`,Input);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`,Input);
             sessionStorage.setItem("id",response.data._id);
 
             // const {login}= authActions;// dispatch(login());

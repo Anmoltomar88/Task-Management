@@ -183,7 +183,7 @@ const Tasks = () => {
         <div className="tasks-body">
           <div className="container-fluid">
             <div className="row">
-              {TaskArray.map((task, index) => (
+              {TaskArray?.map((task, index) => (
                 <div className="col-lg-3 col-11 mx-lg-5 mx-2 my-2" key={index}>
                   <TaskCards
                     title={task.title}

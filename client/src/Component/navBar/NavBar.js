@@ -31,7 +31,7 @@ function NavBar() {
   return (
     <nav className={`navbar navbar-expand-lg ${isDarkMode ? "navbar-dark" : "navbar-light"}`}>
       <div className="container">
-        <Link className="navbar-brand" to="#">
+        <Link className="navbar-brand" to="/">
           <b>
             <img
               src="/vite.svg"
